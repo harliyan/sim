@@ -61,6 +61,12 @@
                   <a class="dropdown-item" href="kps">Kecamatan Pekalongan Selatan</a>
                 </div>
               </li>
+              <li class="nav-item">
+                <a class="nav-link " href="about">
+                  <i class="material-icons">view_module</i>
+                  <span>About</span>
+                </a>
+              </li>
             </ul>
           </div>
         </aside>

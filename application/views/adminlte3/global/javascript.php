@@ -9,35 +9,35 @@
 	 <script src="<?php print base_url('Shards-Dashboard/'); ?>scripts/app/app-blog-overview.1.1.0.js"></script>
 
 	   <!-- DataTables -->
-      <script src="<?php print base_url('adminlte3/'); ?>plugins/datatables/jquery.dataTables.js"></script>
-      <script src="<?php print base_url('adminlte3/'); ?>plugins/datatables/dataTables.bootstrap4.js"></script>
+    <script src="<?php print base_url('adminlte3/'); ?>plugins/datatables/jquery.dataTables.js"></script>
+    <script src="<?php print base_url('adminlte3/'); ?>plugins/datatables/dataTables.bootstrap4.js"></script>
 
-                <script>
-            $(function () {
-              $('#example1').DataTable()
-              $('#example2').DataTable({
-                'paging'      : true,
-                'lengthChange': true,
-                'searching'   : true,
-                'ordering'    : true,
-                'info'        : true,
-                'autoWidth'   : true
-              })
-              $('#example5').DataTable({
-                'paging'      : false,
-                'lengthChange': false,
-                'searching'   : false,
-                'ordering'    : false,
-                'info'        : false,
-                'autoWidth'   : false
-              })
-              $('#example3').DataTable({
-                'paging'      : true,
-                'lengthChange': true,
-                'searching'   : true,
-                'ordering'    : true,
-                'info'        : true,
-                'autoWidth'   : true
-              })
-            })
-          </script>
+    <script>
+      $(function () {
+        $('#example1').DataTable()
+        $('#example2').DataTable({
+          'paging'      : true,
+          'lengthChange': true,
+          'searching'   : true,
+          'ordering'    : true,
+          'info'        : true,
+          'autoWidth'   : true
+        })
+        $('#example5').DataTable({
+          'paging'      : false,
+          'lengthChange': false,
+          'searching'   : false,
+          'ordering'    : false,
+          'info'        : false,
+          'autoWidth'   : false
+        })
+        $('#example3').DataTable({
+          'paging'      : true,
+          'lengthChange': true,
+          'searching'   : true,
+          'ordering'    : true,
+          'info'        : true,
+          'autoWidth'   : true
+        })
+      })
+   </script>

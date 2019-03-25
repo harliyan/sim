@@ -21,7 +21,6 @@
      <div class="card-body mb-12">
  <div class="row">
     <div class="col-sm-12">
-     
       <label class="col-sm-3">ID Telecenter</label>
       <label class="col-sm-8">: <?php echo $data->id_telecenter ?> </label><br>
        <label class="col-sm-3">Kecamatan</label>
@@ -63,25 +62,31 @@
       <label class="col-sm-3"></label>
       <label class="col-sm-8">: <?php echo $data->ket_2 ?> </label><br>
       <label class="col-sm-8"></label><br>
-       <center><div id="googleMap" style="width:90%;height:380px;"></div></center>
-
+      
     </div>
   </div>
-
-      <!--   <div class="card-body mb-12">
-          <div class="col-sm-7">
-            <label class="col-sm-3">ID Telecenter</label>
-            <label class="col-sm-5">: <?php echo $data->id_telecenter ?> </label><br>
-            <label class="col-sm-3">Username</label>
-            <label class="col-sm-5">: <?php echo $data->nama_telecenter ?> </label><br>
-            <label class="col-sm-3">Jumlah PC</label>
-            <label class="col-sm-5">: <?php echo $data->pc_jumlah ?> </label><br>
-          </div>
-          <div class="col-sm-7">
-            <label class="col-sm-3">ID Telecenter</label>
-            <label class="col-sm-5">: <?php echo $data->id_telecenter ?> </label><br>
-        </div> -->
-         
+   <div class="row">
+    <div class="col-sm-4">
+      <label class="col-sm-12">Foto Komputer</label>
+      <img src="<?php print base_url('uploads/'); ?>1.jpeg" class="img-thumbnail" alt="Responsive image">
+    </div>
+   <div class="col-sm-4">
+      <label class="col-sm-12">Foto Printer</label>
+      <img src="<?php print base_url('uploads/'); ?>2.jpeg" class="img-thumbnail" alt="Responsive image">
+    </div>
+    <div class="col-sm-4">
+      <label class="col-sm-12">Foto Jaringan</label>
+      <img src="<?php print base_url('uploads/'); ?>3.jpeg" class="img-thumbnail" alt="Responsive image">
+    </div>
+  </div>
+  <br>
+  <hr>
+  <br>
+  <div class="row">
+    <div class="col-sm-12">
+       <center><div id="googleMap" style="width:90%;height:380px;"></div></center>
+    </div>
+  </div>
        <?php endforeach ?>
        <div class="float-right">
          <br>

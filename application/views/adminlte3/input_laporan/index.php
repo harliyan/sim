@@ -81,17 +81,8 @@
         <div class="card mb-4">
           <div class="card-body">
             <h5 class="card-title">Form Survey</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text">Form Input Telecenter</p>
             <button type="button" data-toggle="modal" data-target="#tambah-data" class="btn btn-primary mb-3" class="glyphicon glyphicon-repeat">Tambah Keterangan Perangkat</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="card mb-4">
-          <div class="card-body">
-            <h5 class="card-title">Upload Geolocation</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <button type="button" data-toggle="modal" data-target="#tambah-data2" class="btn btn-success mb-3" class="glyphicon glyphicon-repeat">Tambah Keterangan Perangkat</button>
           </div>
         </div>
       </div>
@@ -207,10 +198,32 @@
               </div>
               <div class="col-sm">
                <form>
+                 <div class="row">
+              <div class="col-sm">
+               <form>
                 <div class="form-group">
                   <label for="exampleFormControlFile1">Foto PC</label>
                   <input type="file" name="foto" class="form-control-file" id="foto">
                 </div>
+              </form>
+            </div>
+            <div class="col-sm">
+              <form>
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">Foto Printer</label>
+                  <input type="file" name="foto_printer" class="form-control-file" id="foto_printer">
+                </div>
+              </form>
+            </div>
+            <div class="col-sm">
+              <form>
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">Foto Jaringan</label>
+                  <input type="file" name="foto_jaringan" class="form-control-file" id="foto_jaringan">
+                </div>
+              </form>
+            </div>
+          </div>
               </form>
             </div>
             <br>
@@ -221,15 +234,21 @@
             <div class="form-group">
               <label for="exampleFormControlInput1">GPS</label>
               <!-- <input type="text" name="gps" class="form-control" id="exampleFormControlInput1" placeholder="Lokasi"> -->
+               <div>  
+                <button type="button" class="btn btn-success" onclick="getLocation()">Set Lokasi</button>
+                <br>
+                <hr>
+                <p id="gps1"></p>
+
+              </div>
               <div class="row">
                 <div class="col">
-                  <input type="number" name="latitude" class="form-control" placeholder="Latitude">
+                  <input type="text" name="latitude" class="form-control" placeholder="Latitude">
                 </div>
               <div class="col">
-                  <input type="number" name="longitude" class="form-control" placeholder="Longitude">
+                  <input type="text" name="longitude" class="form-control" placeholder="Longitude" id="gps">
                 </div>
               </div>
-              <br>
               <!-- <?php echo $map['html'];?> -->
               <!-- <?php echo $map['js'];?> -->
             </div>
@@ -257,62 +276,8 @@
 </div>
 <!-- END Modal Tambah -->
 
-<!-- Modal 2 -->
-<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="tambah-data2" class="modal fade">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Upload Foto</h4>
-      </div>
-      <form class="form-horizontal" action="<?php echo base_url('admin/input_laporan/update')?>" method="post" enctype="multipart/form-data" role="form">
-        <div class="modal-body">
-          <!-- foto -->
-          <div class="container">
-            <div class="row">
-              <div class="col-sm">
-               <form>
-                <div class="form-group">
-                  <label for="exampleFormControlFile1">Foto PC</label>
-                  <input type="file" name="foto" class="form-control-file" id="foto">
-                </div>
-              </form>
-            </div>
-            <div class="col-sm">
-              <form>
-                <div class="form-group">
-                  <label for="exampleFormControlFile1">Foto Printer</label>
-                  <input type="file" name="foto2" class="form-control-file" id="foto2">
-                </div>
-              </form>
-            </div>
-            <div class="col-sm">
-              <form>
-                <div class="form-group">
-                  <label for="exampleFormControlFile1">Foto Jaringan</label>
-                  <input type="file" name="foto3" class="form-control-file" id="foto3">
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <hr> 
-        <!-- end foto -->
 
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Geotaging</label>
-          <input type="text" name="gps" class="form-control" id="exampleFormControlInput1" placeholder="Lokasi">
-        </div> 
-
-        <div class="modal-footer">
-          <button class="btn btn-info" type="submit"> Simpan&nbsp;</button>
-          <button type="button" class="btn btn-danger" data-dismiss="modal"> Batal</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-</div>
-
+  
 <!-- END Modal Tambah -->
 <!-- End Modal -->
 
@@ -352,18 +317,32 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
 <script>
-  var x = document.getElementById("demo");
+  var x = document.getElementById("gps1");
 
   function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
+      // getGps("gps1");
+      // getGps("gps2");
     } else { 
       x.innerHTML = "Geolocation is not supported by this browser.";
     }
   }
 
   function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;
-  }
+
+      x.innerHTML = "Latitude: " + position.coords.latitude + 
+      "<br>Longitude: " + position.coords.longitude;
+
+       
+
+    // document.getElementById("gps1").value(position.coords.latitude);
+    // document.getElementById("gps2").value(position.coords.longitude);
+
+     // var p = document.getElementById(variablee);
+     // p.value(position.coords.latitude);
+    //var q = document.getElementById(var);
+    // q.value(position.coords.longitude);
+ }
 </script>
+

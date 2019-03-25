@@ -87,21 +87,6 @@
        <center><div id="googleMap" style="width:90%;height:380px;"></div></center>
     </div>
   </div>
-
-      <!--   <div class="card-body mb-12">
-          <div class="col-sm-7">
-            <label class="col-sm-3">ID Telecenter</label>
-            <label class="col-sm-5">: <?php echo $data->id_telecenter ?> </label><br>
-            <label class="col-sm-3">Username</label>
-            <label class="col-sm-5">: <?php echo $data->nama_telecenter ?> </label><br>
-            <label class="col-sm-3">Jumlah PC</label>
-            <label class="col-sm-5">: <?php echo $data->pc_jumlah ?> </label><br>
-          </div>
-          <div class="col-sm-7">
-            <label class="col-sm-3">ID Telecenter</label>
-            <label class="col-sm-5">: <?php echo $data->id_telecenter ?> </label><br>
-        </div> -->
-         
        <?php endforeach ?>
        <div class="float-right">
          <br>

@@ -10,6 +10,8 @@ class Input_laporan extends CI_Controller {
 		$this->load->model('M_input_laporan');
 		$this->load->model('M_status');
 		$this->load->model('M_ket_perangkat');
+		$this->load->helper(array('form'));
+		$this->load->helper('date');
 		if (empty($this->session->userdata('status')) || $this->session->userdata('status') !== "LogedIn") {
 			return redirect('logout');
 		} else {
@@ -41,9 +43,9 @@ class Input_laporan extends CI_Controller {
          $this->googlemaps->add_marker($marker);
             $data['map']=$this->googlemaps->create_map();	
 
-		$data['dropdown'] = $this->M_input_laporan->tampil();
-		$data['dropdown2'] = $this->M_status->tampil();
-		$data['dropdown3'] = $this->M_ket_perangkat->tampil();
+		$data['dropdown'] 			= $this->M_input_laporan->tampil();
+		$data['dropdown2'] 			= $this->M_status->tampil();
+		$data['dropdown3'] 			= $this->M_ket_perangkat->tampil();
 		$data['get_barat_count'] 	= $this->M_home->get_barat_count();
 		$data['get_utara_count'] 	= $this->M_home->get_utara_count();
 		$data['get_timur_count'] 	= $this->M_home->get_timur_count();
@@ -66,29 +68,31 @@ class Input_laporan extends CI_Controller {
 		$this->load->library('upload', $config);
 
 
-		$id_telecenter = $this->input->post('id_telecenter');
-		$id_kecamatan = $this->input->post('id_kecamatan');
-		$nama_telecenter = $this->input->post('nama_telecenter');
-		$alamat_telecenter = $this->input->post('alamat_telecenter');
-		$nama_pengelola = $this->input->post('nama_pengelola');
-		$alamat_pengelola = $this->input->post('alamat_pengelola');
-		$pc_jumlah = $this->input->post('pc_jumlah');
-		$pc_status = $this->input->post('pc_status');
-		$printer_jumlah = $this->input->post('printer_jumlah');
-		$jaringan_jumlah = $this->input->post('jaringan_jumlah');
-		$jaringan_jenis = $this->input->post('jaringan_jenis');
-		$jumlah_pengguna = $this->input->post('jumlah_pengguna');
-		$posisi = $this->input->post('posisi');
-		$lokasi = $this->input->post('lokasi');
-		$ket_2 = $this->input->post('ket_2');
-		$printer_status = $this->input->post('printer_status');
-		$jaringan_status = $this->input->post('jaringan_status');
-		$listrik_jumlah = $this->input->post('listrik_jumlah');
-		$listrik_status = $this->input->post('listrik_status');
-		$ket_1 = $this->input->post('ket_1');
+		$id_telecenter 			= $this->input->post('id_telecenter');
+		$waktu 					= date("Y-m-d H:i:s");
+		$id_kecamatan 			= $this->input->post('id_kecamatan');
+		$nama_telecenter 		= $this->input->post('nama_telecenter');
+		$alamat_telecenter 		= $this->input->post('alamat_telecenter');
+		$nama_pengelola 		= $this->input->post('nama_pengelola');
+		$alamat_pengelola 		= $this->input->post('alamat_pengelola');
+		$pc_jumlah 				= $this->input->post('pc_jumlah');
+		$pc_status 				= $this->input->post('pc_status');
+		$printer_jumlah 		= $this->input->post('printer_jumlah');
+		$jaringan_jumlah 		= $this->input->post('jaringan_jumlah');
+		$jaringan_jenis 		= $this->input->post('jaringan_jenis');
+		$jumlah_pengguna 		= $this->input->post('jumlah_pengguna');
+		$posisi 				= $this->input->post('posisi');
+		$lokasi 				= $this->input->post('lokasi');
+		$ket_2 					= $this->input->post('ket_2');
+		$printer_status 		= $this->input->post('printer_status');
+		$jaringan_status 		= $this->input->post('jaringan_status');
+		$listrik_jumlah 		= $this->input->post('listrik_jumlah');
+		$listrik_status 		= $this->input->post('listrik_status');
+		$ket_1 					= $this->input->post('ket_1');
 
 		$data = array(
 			'id_telecenter' => $id_telecenter,
+			'waktu' => $waktu,
 			'id_kecamatan' => $id_kecamatan,
 			'nama_telecenter' => $nama_telecenter,
 			'nama_pengelola' => $nama_pengelola,

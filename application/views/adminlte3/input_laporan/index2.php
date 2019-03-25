@@ -75,26 +75,90 @@
     </div>
 
 
-    <!-- form input -->
-    <div class="row">
+      <!-- info -->
+      <div class="row">
+              <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card card-small card-post card-post--1">
+                  <div class="card-post__image" style="background-image: url('../uploads/2.jpeg');">
+
+                    <a href="#" class="card-post__category badge badge-pill badge-danger">Survey</a>
+                    <div class="card-post__author d-flex">
+                      <a href="#" class="card-post__author-avatar card-post__author-avatar--small" style="background-image: url('../uploads/2.jpg');">Written by Anna Kunis</a>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <a class="text-fiord-blue" href="#">Survey Ke Lokasi Telecenter</a>
+                    </h5>
+                    <p class="card-text d-inline-block mb-3">Survey Ke Lokasi Telecenter yang ada di Kota Pekalongan</p>
+                    <span class="text-muted"><?php 
+                          echo "Hari ini : "; 
+                          $today = date("d/m/Y"); 
+                          echo $today; 
+                          ?> </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card card-small card-post card-post--1">
+                  <div class="card-post__image" style="background-image: url('../uploads/3.jpeg');">
+
+             
+
+                    <a href="#" class="card-post__category badge badge-pill badge-warning">Input Data</a>
+                    <div class="card-post__author d-flex">
+                      <a href="#" class="card-post__author-avatar card-post__author-avatar--small" style="background-image: url('../uploads/1.jpg');">Written by James Jamerson</a>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <a class="text-fiord-blue" href="#">Input Data Ke Dalam Sistem</a>
+                    </h5>
+                    <p class="card-text d-inline-block mb-3">Input Data ke Dalam Sistem sesuai dengan data Telecenter yang ada</p>
+                     <span class="text-muted"><?php 
+                          echo "Hari ini : "; 
+                          $today = date("d/m/Y"); 
+                          echo $today; 
+                          ?> </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card card-small card-post card-post--1">
+                 <div class="card-post__image" style="background-image: url('../uploads/6.jpeg');">
+                    <a href="#" class="card-post__category badge badge-pill badge-success">Cek Data</a>
+                    <div class="card-post__author d-flex">
+                      <a href="#" class="card-post__author-avatar card-post__author-avatar--small" style="background-image: url('../uploads/0.jpg');">Written by Jimmy Jackson</a>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <a class="text-fiord-blue" href="#">Cek Data Telecenter</a>
+                    </h5>
+                    <p class="card-text d-inline-block mb-3">Cek data Telecenter pada menu Report apakah data berhasil masuk ke Sistem Telecenter</p>
+                     <span class="text-muted"><?php 
+                          echo "Hari ini : "; 
+                          $today = date("d/m/Y"); 
+                          echo $today; 
+                          ?> </span>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+
+      <!-- info -->
+          <div class="row">
       <div class="col-lg-6">
         <div class="card mb-4">
           <div class="card-body">
             <h5 class="card-title">Form Survey</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text">Form Input Telecenter.</p>
             <button type="button" data-toggle="modal" data-target="#tambah-data" class="btn btn-primary mb-3" class="glyphicon glyphicon-repeat">Tambah Keterangan Perangkat</button>
           </div>
         </div>
       </div>
-      <div class="col-lg-6">
-        <div class="card mb-4">
-          <div class="card-body">
-            <h5 class="card-title">Upload Geolocation</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <button type="button" data-toggle="modal" data-target="#tambah-data2" class="btn btn-success mb-3" class="glyphicon glyphicon-repeat">Tambah Keterangan Perangkat</button>
-          </div>
-        </div>
-      </div>
+
 
       <!-- Modal 1 -->
       <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="tambah-data" class="modal fade">
@@ -212,7 +276,7 @@
                <form>
                 <div class="form-group">
                   <label for="exampleFormControlFile1">Foto PC</label>
-                  <input type="file" name="foto" class="form-control-file" id="foto">
+                  <input type="file" class="form-control-file" id="foto" <?php echo form_upload('foto'); ?>
                 </div>
               </form>
             </div>
@@ -220,7 +284,7 @@
               <form>
                 <div class="form-group">
                   <label for="exampleFormControlFile1">Foto Printer</label>
-                  <input type="file" name="foto_printer" class="form-control-file" id="foto_printer">
+                  <input type="file" class="form-control-file" id="foto_printer" <?php echo form_upload('foto_printer'); ?>
                 </div>
               </form>
             </div>
@@ -228,7 +292,7 @@
               <form>
                 <div class="form-group">
                   <label for="exampleFormControlFile1">Foto Jaringan</label>
-                  <input type="file" name="foto_jaringan" class="form-control-file" id="foto_jaringan">
+                  <input type="file" class="form-control-file" id="foto_jaringan" <?php echo form_upload('foto_jaringan'); ?>
                 </div>
               </form>
             </div>
@@ -285,61 +349,7 @@
 </div>
 <!-- END Modal Tambah -->
 
-<!-- Modal 2 -->
-<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="tambah-data2" class="modal fade">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Upload Foto</h4>
-      </div>
-      <form class="form-horizontal" action="<?php echo base_url('surveyor/input_laporan/update')?>" method="post" enctype="multipart/form-data" role="form">
-        <div class="modal-body">
-          <!-- foto -->
-          <div class="container">
-            <div class="row">
-              <div class="col-sm">
-               <form>
-                <div class="form-group">
-                  <label for="exampleFormControlFile1">Foto PC</label>
-                  <input type="file" name="foto" class="form-control-file" id="foto">
-                </div>
-              </form>
-            </div>
-            <div class="col-sm">
-              <form>
-                <div class="form-group">
-                  <label for="exampleFormControlFile1">Foto Printer</label>
-                  <input type="file" name="foto2" class="form-control-file" id="foto2">
-                </div>
-              </form>
-            </div>
-            <div class="col-sm">
-              <form>
-                <div class="form-group">
-                  <label for="exampleFormControlFile1">Foto Jaringan</label>
-                  <input type="file" name="foto3" class="form-control-file" id="foto3">
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <hr> 
-        <!-- end foto -->
 
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Geotaging</label>
-          <input type="text" name="gps" class="form-control" id="exampleFormControlInput1" placeholder="Lokasi">
-        </div> 
-
-        <div class="modal-footer">
-          <button class="btn btn-info" type="submit"> Simpan&nbsp;</button>
-          <button type="button" class="btn btn-danger" data-dismiss="modal"> Batal</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-</div>
 
 <!-- END Modal Tambah -->
 <!-- End Modal -->
@@ -359,7 +369,7 @@
   function initialize() {
     var propertiPeta = {
       center:new google.maps.LatLng(-6.895863, 109.662573),
-      zoom:14,
+      zoom:16,
       mapTypeId:google.maps.MapTypeId.ROADMAP
     };
 
